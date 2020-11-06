@@ -5,12 +5,12 @@ import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
 interface Request {
-    provider: string;
+    providerId: string;
     date: Date;
 }
 
 class CreateAppointmentService {
-    public async execute({ provider, date }: Request): Promise<Appointment> {
+    public async execute({ providerId, date }: Request): Promise<Appointment> {
         const appointmentsRepository = getCustomRepository(
             AppointmentsRepository,
         );
@@ -22,11 +22,11 @@ class CreateAppointmentService {
         );
 
         if (findAppointment) {
-            throw Error('Data já marcada');
+            throw Error('Date already marked');
         }
 
         const appointment = appointmentsRepository.create({
-            provider,
+            providerId,
             date: appointmentDate,
         });
 
