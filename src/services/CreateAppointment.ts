@@ -1,6 +1,6 @@
 import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
-
+import AppError from '../errors/AppError';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
@@ -22,7 +22,7 @@ class CreateAppointmentService {
         );
 
         if (findAppointment) {
-            throw Error('Date already marked');
+            throw new AppError('Date already marked', 400);
         }
 
         const appointment = appointmentsRepository.create({

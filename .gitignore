@@ -15,3 +15,5 @@ lerna-debug.log*
 
 # TernJS port file
 node_modules/
+tmp/*
+!tmp/.gitkeep
