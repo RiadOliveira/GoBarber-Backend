@@ -1,5 +1,6 @@
 import express from 'express';
 import 'express-async-errors';
+import cors from 'cors';
 import routes from './routes/index';
 import './database';
 import 'reflect-metadata';
@@ -9,6 +10,7 @@ import GlobalErrorHandler from './errors/GlobalErrorHandler';
 const app = express();
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.directory));
+app.use(cors());
 app.use(routes);
 app.use(GlobalErrorHandler);
 
