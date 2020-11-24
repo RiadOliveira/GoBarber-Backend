@@ -1,11 +1,14 @@
 import express from 'express';
 import 'express-async-errors';
 import cors from 'cors';
-import routes from './routes/index';
-import './database';
+import uploadConfig from '@config/upload';
+import GlobalErrorHandler from '@shared/errors/GlobalErrorHandler';
 import 'reflect-metadata';
-import uploadConfig from './config/upload';
-import GlobalErrorHandler from './errors/GlobalErrorHandler';
+
+import routes from './routes';
+
+import '@shared/infra/typeorm';
+import '@shared/container';
 
 const app = express();
 app.use(express.json());
