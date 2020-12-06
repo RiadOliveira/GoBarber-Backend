@@ -1,4 +1,4 @@
-import ResetPasswordService from '@modules/users/services/ResetPassword';
+import ResetPasswordService from '@modules/users/services/ResetPasswordService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 

@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import FakeDiskStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeDiskStorageProvider';
 import AppError from '@shared/errors/AppError';
-import UpdateUserAvatar from './UpdateUserAvatar';
+import UpdateUserAvatar from './UpdateUserAvatarService';
 
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 

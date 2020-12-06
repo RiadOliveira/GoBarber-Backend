@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import AppError from '@shared/errors/AppError';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
-import ShowProfileService from './ShowProfile';
+import ShowProfileService from './ShowProfileService';
 
 let fakeUsersRepository: FakeUsersRepository;
 let showProfile: ShowProfileService;

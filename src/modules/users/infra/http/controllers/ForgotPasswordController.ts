@@ -1,4 +1,4 @@
-import SendForgotPasswordEmailService from '@modules/users/services/SendForgotPasswordEmail';
+import SendForgotPasswordEmailService from '@modules/users/services/SendForgotPasswordEmailService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
