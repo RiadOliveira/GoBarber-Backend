@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for users/services/ResetPasswordService.ts</title>
+    <title>Code coverage report for appointments/services/ListProviderMonthAvailabilityService.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">users/services</a> ResetPasswordService.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">appointments/services</a> ListProviderMonthAvailabilityService.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
@@ -103,9 +103,7 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -120,85 +118,81 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import AppError from '@shared/errors/AppError';
-import { inject, injectable } from 'tsyringe';
-import { isAfter, addHours } from 'date-fns';
-import IHashProvider from '../providers/HashProvider/models/IHashProvider';
-import IUserRepository from '../repositories/IUsersRepository';
-import IUserTokensRepository from '../repositories/IUserTokensRepository';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { inject, injectable } from 'tsyringe';
+import { getDate, getDaysInMonth } from 'date-fns';
+import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
+import IFindAllInMonthProviderDTO from '../dtos/IFindAllInMonthFromProviderDTO';
 &nbsp;
-interface IRequest {
-    token: string;
-    password: string;
-}
+type IResponse = Array&lt;{
+    day: number;
+    available: boolean;
+}&gt;;
 &nbsp;
 @injectable()
-export default class ResetPasswordService {
+export default class ListProviderMonthAvailabilityService {
     constructor(
-        @inject('UsersRepository') private usersRepository: IUserRepository,
-        @inject('UserTokensRepository')
-        private userTokensRepository: IUserTokensRepository,
-        @inject('HashProvider') private hashProvider: IHashProvider,
+        @inject('AppointmentsRepository')
+        private appointmentsRepository: IAppointmentsRepository,
     ) {}
 &nbsp;
-    public async execute({ token, password }: IRequest): Promise&lt;void&gt; {
-        const userToken = await this.userTokensRepository.findByToken(token);
-&nbsp;
-        if (!userToken) {
-            throw new AppError('Invalid token', 400);
-        }
-&nbsp;
-        const tokenCreatedAt = userToken.createdAt;
-        const comparedDate = addHours(tokenCreatedAt, 2);
-&nbsp;
-        if (isAfter(Date.now(), comparedDate)) {
-            throw new AppError('Token expired', 400);
-        }
-&nbsp;
-        const findedUser = await this.usersRepository.findById(
-            userToken.userId,
+    public async execute({
+        providerId,
+        month,
+        year,
+    }: IFindAllInMonthProviderDTO): Promise&lt;IResponse&gt; {
+        const findedAppointments = await this.appointmentsRepository.findAllInMonthFromProvider(
+            { providerId, month, year },
         );
 &nbsp;
-        if (!findedUser) {
-            throw new AppError('Non-existing user', 400);
-        }
+        const numberOfDaysInMonth = getDaysInMonth(new Date(year, month - 1));
 &nbsp;
-        findedUser.password = await this.hashProvider.generateHash(password);
+        const eachDayArray = Array.from(
+            {
+                length: numberOfDaysInMonth,
+            },
+            (value, index) =&gt; index + 1,
+        );
 &nbsp;
-        this.usersRepository.save(findedUser);
+        const availability = eachDayArray.map(day =&gt; {
+            const appointmentsInDay = findedAppointments.filter(
+                appointment =&gt; getDate(appointment.date) === day,
+            );
+&nbsp;
+            return { day, available: appointmentsInDay.length &lt; 10 };
+        });
+&nbsp;
+        return availability;
     }
 }
 &nbsp;</pre></td></tr></table></pre>

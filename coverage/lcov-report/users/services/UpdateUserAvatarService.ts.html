@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for users/services/ResetPasswordService.ts</title>
+    <title>Code coverage report for users/services/UpdateUserAvatarService.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">users/services</a> ResetPasswordService.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">users/services</a> UpdateUserAvatarService.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
@@ -98,14 +98,7 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -117,88 +110,74 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
-import { isAfter, addHours } from 'date-fns';
-import IHashProvider from '../providers/HashProvider/models/IHashProvider';
+import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
+import User from '../infra/typeorm/entities/User';
 import IUserRepository from '../repositories/IUsersRepository';
-import IUserTokensRepository from '../repositories/IUserTokensRepository';
 &nbsp;
 interface IRequest {
-    token: string;
-    password: string;
+    userId: string;
+    avatarFileName: string;
 }
 &nbsp;
 @injectable()
-export default class ResetPasswordService {
+export default class UpdateUserAvatarService {
     constructor(
         @inject('UsersRepository') private usersRepository: IUserRepository,
-        @inject('UserTokensRepository')
-        private userTokensRepository: IUserTokensRepository,
-        @inject('HashProvider') private hashProvider: IHashProvider,
+        @inject('StorageProvider') private storageProvider: IStorageProvider,
     ) {}
 &nbsp;
-    public async execute({ token, password }: IRequest): Promise&lt;void&gt; {
-        const userToken = await this.userTokensRepository.findByToken(token);
+    public async execute({ userId, avatarFileName }: IRequest): Promise&lt;User&gt; {
+        const user = await this.usersRepository.findById(userId);
 &nbsp;
-        if (!userToken) {
-            throw new AppError('Invalid token', 400);
+        if (!user) {
+            throw new AppError(
+                'Only authenticated users can change avatar',
+                401,
+            );
         }
 &nbsp;
-        const tokenCreatedAt = userToken.createdAt;
-        const comparedDate = addHours(tokenCreatedAt, 2);
-&nbsp;
-        if (isAfter(Date.now(), comparedDate)) {
-            throw new AppError('Token expired', 400);
+        if (user.avatar) {
+            await this.storageProvider.deleteFile(user.avatar);
         }
 &nbsp;
-        const findedUser = await this.usersRepository.findById(
-            userToken.userId,
-        );
+        const fileName = await this.storageProvider.saveFile(avatarFileName);
 &nbsp;
-        if (!findedUser) {
-            throw new AppError('Non-existing user', 400);
-        }
+        user.avatar = fileName;
 &nbsp;
-        findedUser.password = await this.hashProvider.generateHash(password);
+        await this.usersRepository.save(user);
 &nbsp;
-        this.usersRepository.save(findedUser);
+        return user;
     }
 }
 &nbsp;</pre></td></tr></table></pre>
