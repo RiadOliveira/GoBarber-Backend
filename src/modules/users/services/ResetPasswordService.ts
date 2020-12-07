@@ -23,14 +23,14 @@ export default class ResetPasswordService {
         const userToken = await this.userTokensRepository.findByToken(token);
 
         if (!userToken) {
-            throw new AppError('Invalid token', 400);
+            throw new AppError('Invalid token.', 400);
         }
 
         const tokenCreatedAt = userToken.createdAt;
         const comparedDate = addHours(tokenCreatedAt, 2);
 
         if (isAfter(Date.now(), comparedDate)) {
-            throw new AppError('Token expired', 400);
+            throw new AppError('Token expired.', 400);
         }
 
         const findedUser = await this.usersRepository.findById(
