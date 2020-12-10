@@ -4,7 +4,10 @@ import IFindAllInMonthProviderDTO from '../dtos/IFindAllInMonthFromProviderDTO';
 import IFindAllInDayFromProviderDTO from '../dtos/IFindAllInDayFromProviderDTO';
 
 export default interface IAppointmentsRepository {
-    findByDate(date: Date): Promise<Appointment | undefined>;
+    findByDate(
+        date: Date,
+        providerId: string,
+    ): Promise<Appointment | undefined>;
     findAllInMonthFromProvider(
         data: IFindAllInMonthProviderDTO,
     ): Promise<Appointment[]>;

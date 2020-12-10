@@ -25,7 +25,7 @@ class Appointment {
     @Column()
     userId: string;
 
-    @ManyToOne(() => User)
+    @ManyToOne(() => User, { eager: true })
     @JoinColumn({ name: 'userId' })
     user: User;
 
