@@ -16,7 +16,6 @@ export default class UpdateUserAvatarService {
     constructor(
         @inject('UsersRepository') private usersRepository: IUserRepository,
         @inject('StorageProvider') private storageProvider: IStorageProvider,
-        @inject('CacheProvider') private cacheProvider: ICacheProvider,
     ) {}
 
     public async execute({ userId, avatarFileName }: IRequest): Promise<User> {
@@ -38,13 +37,6 @@ export default class UpdateUserAvatarService {
         user.avatar = fileName;
 
         await this.usersRepository.save(user);
-
-        await this.cacheProvider.invalidate(`providers-list:${userId}`);
-
-        await this.cacheProvider.save(
-            `providers-list:${userId}`,
-            classToClass(user),
-        );
 
         return user;
     }
