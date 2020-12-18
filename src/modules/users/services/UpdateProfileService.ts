@@ -1,4 +1,6 @@
+import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 import AppError from '@shared/errors/AppError';
+import { classToClass } from 'class-transformer';
 import { inject, injectable } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
 import IHashProvider from '../providers/HashProvider/models/IHashProvider';
@@ -17,6 +19,7 @@ export default class UpdateProfileService {
     constructor(
         @inject('UsersRepository') private usersRepository: IUserRepository,
         @inject('HashProvider') private hashProvider: IHashProvider,
+        @inject('CacheProvider') private cacheProvider: ICacheProvider,
     ) {}
 
     public async execute({
@@ -58,6 +61,15 @@ export default class UpdateProfileService {
             );
         }
 
-        return this.usersRepository.save(user);
+        const updatedUser = this.usersRepository.save(user);
+
+        await this.cacheProvider.invalidate(`providers-list:${userId}`);
+
+        await this.cacheProvider.save(
+            `providers-list:${userId}`,
+            classToClass(user),
+        );
+
+        return updatedUser;
     }
 }
